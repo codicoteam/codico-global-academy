@@ -61,7 +61,7 @@ const About = () => {
             >
               <span className="font-medium uppercase text-black dark:text-white">
                 <span className="mb-4 mr-4 inline-flex rounded-full bg-meta px-4.5 py-1 text-metatitle uppercase text-white ">
-                  New
+                  Newws
                 </span>{" "}
                 SaaS Boilerplate for Next.js
               </span>
