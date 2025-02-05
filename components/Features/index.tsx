@@ -13,11 +13,12 @@ const Feature = () => {
           {/* <!-- Section Title Start --> */}
           <SectionHeader
             headerInfo={{
-              title: "SOLID FEATURES",
-              subtitle: "Core Features of Solid",
-              description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-            convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam
-            ante in maximus.`,
+              title: "CODICO GLOBAL ACADEMY FEATURES",
+              subtitle: "Core Features of CODICO GLOBAL ACADEMY",
+              description: `Codico Global Academy provides developers with unlimited access to coding courses,
+               hands-on projects, interactive quizzes, and essential tools. Whether you're a beginner or an
+                experienced coder, the platform offers expert-led instruction and a supportive community to
+                 help you grow and advance your career.`,
             }}
           />
           {/* <!-- Section Title End --> */}
