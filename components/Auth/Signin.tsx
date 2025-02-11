@@ -25,6 +25,10 @@ const Signin = () => {
     try {
       const res = await signInWithEmailAndPassword(email, password);
       console.log({ res });
+      if (!res || !res.user) {
+        alert("Invalid email or password.");
+        return;
+      }
       setEmail("");
       setPassword("");
       router.push("/");
@@ -32,6 +36,7 @@ const Signin = () => {
       console.error("Error during sign-in:", e);
     }
   };
+
   const [user, setUser] = useAuthState(auth);
   const googleAuth = new GoogleAuthProvider();
   const LogIn = async () => {
