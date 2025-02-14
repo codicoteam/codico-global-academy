@@ -12,8 +12,6 @@ import {
   getAuth,
   GithubAuthProvider,
 } from "firebase/auth";
-
-
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const Signin = () => {
@@ -45,7 +43,7 @@ const Signin = () => {
     const res = await signInWithPopup(auth, googleAuth);
   };
 
-  
+
   const gitAuth = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     const provider = new GithubAuthProvider();
     
@@ -58,8 +56,6 @@ const Signin = () => {
         console.error('Error during GitHub authentication:', error);
       });
   };
-
-
   useEffect(() => {
     console.log(user);
   }, [user]);
@@ -147,7 +143,7 @@ const Signin = () => {
 
                   {/* <!-- ===== Signup with Github ===== --> */}
                   <button
-                    onClick={ gitAuth }
+                  onClick={gitAuth}
                     aria-label="signup with github"
                     className="text-body-color dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border border-stroke bg-[#f8f8f8] px-6 py-3 text-base outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none"
                   >
