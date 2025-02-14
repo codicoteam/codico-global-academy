@@ -3,45 +3,45 @@ import { Blog } from "@/types/blog";
 const BlogData: Blog[] = [
   {
     _id: 1,
-    mainImage: "/images/blog/blog-01.png",
-    title: "Free advertising for your online business",
+    mainImage: "/images/blog/team-1.jpg",
+    title: "Mr B. Jordan ",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      " CEO",
   },
   {
     _id: 2,
-    mainImage: "/images/blog/blog-02.png",
-    title: "9 simple ways to improve your design skills",
+    mainImage: "/images/blog/team-2.jpg",
+    title: "Mr John Smith",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "Senior Developer",
   },
   {
     _id: 2,
-    mainImage: "/images/blog/blog-03.png",
-    title: "Tips to quickly improve your coding speed.",
+    mainImage: "/images/blog/team-3.jpg",
+    title: "Mr Anold",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "Jnr Developer",
   },
   {
     _id: 1,
-    mainImage: "/images/blog/blog-03.png",
-    title: "Free advertising for your online business",
+    mainImage: "/images/blog/team-4.jpg",
+    title: "Mr Raiden",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      "Analyst",
   },
   {
-    _id: 2,
-    mainImage: "/images/blog/blog-04.png",
-    title: "9 simple ways to improve your design skills",
+    _id: 1,
+    mainImage: "/images/blog/team-1.jpg",
+    title: "Mr B. Jordan ",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      " CEO",
   },
   {
-    _id: 2,
-    mainImage: "/images/blog/blog-01.png",
-    title: "Tips to quickly improve your coding speed.",
+    _id: 1,
+    mainImage: "/images/blog/team-1.jpg",
+    title: "Mr B. Jordan ",
     metadata:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit convallis tortor.",
+      " CEO",
   },
 ];
 
