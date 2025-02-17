@@ -1,55 +1,60 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/app/config";
 
 const AddCourse = () => {
   const [data, setData] = useState({
-    courseImage: null,
+    courseImage: "", // Changed to text input
     title: "",
     description: "",
     category: "",
-    instructor: {
-      name: "",
-      email: "",
-      experience: "",
-    },
+   
     duration: "",
     price: "",
     currency: "USD",
     level: "",
-    mode: "",
-    prerequisites: "",
-    syllabus: "",
-    enrollment_status: "Open",
-    certification: {
-      provided: false,
-      certificate_name: "",
-      issuing_body: "",
-    },
+   
   });
 
-  const handleChange = (e) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    if (name.includes("instructor.")) {
-      const field = name.split(".")[1];
-      setData((prev) => ({
-        ...prev,
-        instructor: { ...prev.instructor, [field]: value },
-      }));
-    } else if (name.includes("certification.")) {
-      const field = name.split(".")[1];
-      setData((prev) => ({
-        ...prev,
-        certification: { ...prev.certification, [field]: value },
-      }));
-    } else {
-      setData((prev) => ({ ...prev, [name]: value }));
-    }
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
-  const handleFileChange = (e) => {
-    setData((prev) => ({ ...prev, courseImage: e.target.files[0] }));
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      await addDoc(collection(db, "courses"), data);
+      alert("Course added successfully!");
+      setData({
+        courseImage: "",
+        title: "",
+        description: "",
+        category: "",
+     
+        duration: "",
+        price: "",
+        currency: "USD",
+        level: "",
+      
+      });
+    } catch (error) {
+      console.error("Error adding course:", error);
+      setError("Failed to add course. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -66,30 +71,27 @@ const AddCourse = () => {
           <h2 className="mb-10 text-center text-4xl font-bold text-black dark:text-white">
             Add Course
           </h2>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-4">
-              <input type="file" name="courseImage" onChange={handleFileChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
+              <input type="text" name="courseImage" placeholder="Course Image URL" value={data.courseImage} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
               <input type="text" name="title" placeholder="Course Title" value={data.title} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
               <textarea name="description" placeholder="Description" value={data.description} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
               <input type="text" name="category" placeholder="Category" value={data.category} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input type="text" name="instructor.name" placeholder="Instructor Name" value={data.instructor.name} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
-              <input type="email" name="instructor.email" placeholder="Instructor Email" value={data.instructor.email} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
-              <input type="text" name="instructor.experience" placeholder="Instructor Experience" value={data.instructor.experience} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
+            <div className="flex flex-col gap-4">
               <input type="text" name="duration" placeholder="Duration" value={data.duration} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input type="number" name="price" placeholder="Price" value={data.price} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
+              <input type="text" name="price" placeholder="Price" value={data.price} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
               <input type="text" name="currency" placeholder="Currency" value={data.currency} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
               <input type="text" name="level" placeholder="Level" value={data.level} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
-              <input type="text" name="mode" placeholder="Mode" value={data.mode} onChange={handleChange} className="p-3 border rounded-lg bg-gray-50 dark:bg-gray-800" />
             </div>
-            
-            <button className="w-full py-3 bg-black text-white rounded-lg font-medium text-lg hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600">
-              Submit Course
+
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3 bg-black text-white rounded-lg font-medium text-lg hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600"
+            >
+              {loading ? "Submitting..." : "Submit Course"}
             </button>
           </form>
         </motion.div>
