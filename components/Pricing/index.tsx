@@ -12,9 +12,9 @@ const Pricing = () => {
           <div className="animate_top mx-auto text-center">
             <SectionHeader
               headerInfo={{
-                title: `PRICING PLANS`,
-                subtitle: `Simple Pricing`,
-                description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
+                title: `CODICO GLOBAL ACADEMY PLANS`,
+                subtitle: `Pricing`,
+                description: `Unlock your Learnig Potential. Choose a Plan that Fits Your Goals.`,
               }}
             />
           </div>
@@ -45,7 +45,7 @@ const Pricing = () => {
               </span>
               <button
                 className="text-base font-small text-white dark:text-white bg-blue-500 rounded-[25px] p-2 max-w-xs text-center 
-    transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
               >
                 Start for free
               </button>

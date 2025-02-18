@@ -1,10 +1,10 @@
 "use client";
-import { Blog } from "@/types/blog";
+import { Blog, Team } from "@/types/team";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogItem = ({ blog }: { blog: Blog }) => {
+const Teamitem = ({ blog }: { blog: Team }) => {
   const { mainImage, title, metadata } = blog;
 
   return (
@@ -44,4 +44,4 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
   );
 };
 
-export default BlogItem;
+export default Teamitem;

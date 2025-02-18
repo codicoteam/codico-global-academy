@@ -32,13 +32,7 @@ const menuData: Menu[] = [
     newTab: false,
     path: "/addCourses",
   },
-  
-  {
-    id: 2.3,
-    title: "Docs",
-    newTab: false,
-    path: "/docs",
-  },
+ 
   {
     id: 3,
     title: "Pages",
@@ -48,7 +42,7 @@ const menuData: Menu[] = [
         id: 31,
         title: "Team",
         newTab: false,
-        path: "/blog",
+        path: "/Team",
       },
       {
         id: 34,
@@ -62,12 +56,7 @@ const menuData: Menu[] = [
         newTab: false,
         path: "/auth/signup",
       },
-      {
-        id: 35,
-        title: "Docs",
-        newTab: false,
-        path: "/docs",
-      },
+      
       {
         id: 35.1,
         title: "Support",
@@ -83,12 +72,12 @@ const menuData: Menu[] = [
     ],
   },
 
-  {
-    id: 4,
-    title: "Support",
-    newTab: false,
-    path: "/support",
-  },
+  //{
+    //id: 4,
+    //title: "Support",
+    //newTab: false,
+    //path: "/support",
+  //},
   
 
 

@@ -17,3 +17,16 @@ export type Blog = {
   tags?: string[];
   publishedAt?: string;
 };
+
+export type Team = {
+  _id: number;
+  title: string;
+  slug?: any;
+  metadata?: string;
+  body?: string;
+  mainImage?: any;
+  author?: Author;
+  tags?: string[];
+  publishedAt?: string;
+};
+
