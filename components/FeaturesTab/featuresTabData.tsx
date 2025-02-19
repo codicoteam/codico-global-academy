@@ -3,27 +3,28 @@ import { FeatureTab } from "@/types/featureTab";
 const featuresTabData: FeatureTab[] = [
   {
     id: "tabOne",
-    title: "Solid Has Neat & Clean User Interface.",
-    desc1: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.`,
-    desc2: `    Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.`,
+    title: "Codico Global Academy Offers Flexible Learning for its Users",
+    desc1: `Take control of your Learning Journey with our self-paced online courses. Learn at your 
+    own speed, review material as needed and upgrade your skills with ease.`,
+    desc2: ` Get started Today with CODICO GLOBAL ACADEMYS  `,
     image: "/images/features/features-light-01.png",
     imageDark: "/images/features/features-dark-01.svg",
   },
   {
     id: "tabTwo",
-    title: "Ready to Use Pages You Need for a SaaS Business.",
-    desc1: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.`,
-    desc2: `    Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.`,
+    title: "Real-World Projects",
+    desc1: `Apply your theoretical Knowledge and concepts to real world projects and build a portfolio of your work.`,
+    desc2: `    Get Started Today with CODICO GLOBAL ACADEMY.`,
     image: "/images/features/features-light-01.png",
     imageDark: "/images/features/features-dark-01.svg",
   },
   {
     id: "tabThree",
-    title: "Functional Blog, DB, Auth and Many More",
-    desc1: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ultricies lacus non fermentum ultrices. Fusce consectetur le.`,
-    desc2: `Nam id eleifend dui, id iaculis purus. Etiam lobortis neque nec finibus sagittis. Nulla ligula nunc egestas ut.`,
-    image: "/images/features/features-light-01.png",
-    imageDark: "/images/features/features-dark-01.svg",
+    title: " Certificate of Completion",
+    desc1: `Receive a certificate of completion upon finishing a course.`,
+    desc2: `Get started Today with CODICO GLOBAL ACADEMYS.`,
+    image: "/images/features/certificate.jpeg",
+    imageDark: "/images/features/certificate.jpeg",
   },
 ];
 

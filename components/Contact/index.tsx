@@ -57,7 +57,7 @@ const Contact = () => {
               className="animate_top w-full rounded-lg bg-white p-7.5 shadow-solid-8 dark:border dark:border-strokedark dark:bg-black md:w-3/5 lg:w-3/4 xl:p-15"
             >
               <h2 className="mb-15 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
-                Send a message
+                Contact Us
               </h2>
 
               <form
@@ -137,7 +137,7 @@ const Contact = () => {
                     aria-label="send message"
                     className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark"
                   >
-                    Send Message
+                    Send 
                     <svg
                       className="fill-white"
                       width="14"
@@ -180,25 +180,28 @@ const Contact = () => {
 
               <div className="5 mb-7">
                 <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
-                  Our Loaction
+                  Loaction
                 </h3>
-                <p>290 Maryam Springs 260, Courbevoie, Paris, France</p>
+                <p>Construction House,3rd Floor, Harare CBD Zimbabwe</p>
               </div>
               <div className="5 mb-7">
                 <h3 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
                   Email Address
                 </h3>
                 <p>
-                  <a href="#">yourmail@domainname.com</a>
+                  <a href="#">codicoglobal@gmail.com</a>
                 </p>
               </div>
               <div>
                 <h4 className="mb-4 text-metatitle3 font-medium text-black dark:text-white">
                   Phone Number
                 </h4>
-                <p>
-                  <a href="#">+009 42334 6343 843</a>
-                </p>
+               
+                  <ul>
+                    <li><a href="#">+263 78 089 7191</a></li>
+                    <li><a href="#">+263 78 864 7705</a></li>
+                  </ul>
+                
               </div>
             </motion.div>
           </div>

@@ -2,12 +2,13 @@
 
 import { useEffect, useState, useRef } from "react";
 import { collection, getDocs } from "firebase/firestore";
+import { Blog, Team } from "@/types/team";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { db } from "@/app/config";
 
-const BlogItem = () => {
+const Teamitem = () => {
   const [courses, setCourses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -87,4 +88,4 @@ const BlogItem = () => {
   );
 };
 
-export default BlogItem;
+export default Teamitem;

@@ -10,7 +10,7 @@ import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
-import Blog from "@/components/Blog";
+import Team from "@/components/team";
 import Testimonial from "@/components/Testimonial";
 
 export const metadata: Metadata = {
@@ -28,14 +28,16 @@ export default function Home() {
       <Feature />
       <About />
       <FeaturesTab />
-      <FunFact />
+
       <Integration />
       <CTA />
-      <FAQ />
-      <Testimonial />
+
       <Pricing />
       <Contact />
-      <Blog />
+      <Team />
     </main>
   );
 }
+//<FunFact />
+//<FAQ />
+//<Testimonial />
