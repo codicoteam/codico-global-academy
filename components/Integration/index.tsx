@@ -13,7 +13,7 @@ const Integration = () => {
             headerInfo={{
               title: `INTEGRATIONS`,
               subtitle: `Remotely learn From the comfort of your own Home `,
-              description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae tortor lacus. Phasellus aliquam ante in maximus.`,
+              description: `Easy Learning.`,
             }}
           />
 
