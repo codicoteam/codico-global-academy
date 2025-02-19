@@ -11,10 +11,10 @@ const BlogItem = () => {
   const [courses, setCourses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  const isMounted = useRef(false); // ✅ Prevents multiple fetches
+  const isMounted = useRef(false); 
 
   useEffect(() => {
-    if (isMounted.current) return; // ✅ Ensures fetch runs only once
+    if (isMounted.current) return; 
     isMounted.current = true;
 
     const fetchCourses = async () => {
@@ -25,14 +25,13 @@ const BlogItem = () => {
           ...doc.data(),
         }));
 
-        console.log("Fetched Courses Data: ", coursesData); // ✅ Debugging: Check the fetched data
+        console.log("Fetched Courses Data: ", coursesData); 
 
-        // ✅ Ensure unique courses by using the Map
         const uniqueCourses = Array.from(new Map(coursesData.map((item) => [item.id, item])).values());
         
-        console.log("Unique Courses Data: ", uniqueCourses); // ✅ Debugging: Check unique courses
+        console.log("Unique Courses Data: ", uniqueCourses);
 
-        setCourses(uniqueCourses); // Only set unique courses
+        setCourses(uniqueCourses); 
       } catch (error) {
         console.error("Error fetching courses:", error);
       } finally {
