@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const Hero = () => {
@@ -33,25 +34,18 @@ const Hero = () => {
               <div className="mt-10">
                 <form onSubmit={handleSubmit}>
                   <div className="flex flex-wrap gap-5">
-                    <input
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      type="text"
-                      placeholder="Enter your email address"
-                      className="rounded-full border border-stroke px-6 py-2.5 shadow-solid-2 focus:border-primary focus:outline-none dark:border-strokedark dark:bg-black dark:shadow-none dark:focus:border-primary"
-                    />
-                    <button
-                      aria-label="get started button"
-                      className="flex rounded-full bg-black px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark dark:hover:bg-blackho"
-                    >
-                      Get Started today
-                    </button>
+                    <Link href="http://localhost:3000/auth/signup">
+                      <button
+                        aria-label="get started button"
+                        className="flex rounded-full bg-red-500 px-7.5 py-2.5 text-white duration-300 ease-in-out hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-700"
+                      >
+                        Get Started today
+                      </button>
+                    </Link>
                   </div>
                 </form>
 
-                <p className="mt-5 text-black dark:text-white">
-                  Free-trail—no credit card needed.
-                </p>
+              
               </div>
             </div>
 
@@ -65,14 +59,14 @@ const Hero = () => {
                   className="absolute -left-11.5 top-0"
                 />
                 <Image
-                  src="/images/shape/shape-02.svg"
+                  src="/images/shape/sp2.png"
                   alt="shape"
                   width={36.9}
                   height={36.7}
                   className="absolute bottom-0 right-0 z-10"
                 />
                 <Image
-                  src="/images/shape/shape-03.svg"
+                  src="/images/shape/sp3.png"
                   alt="shape"
                   width={21.64}
                   height={21.66}
@@ -81,13 +75,13 @@ const Hero = () => {
                 <div className=" relative aspect-[700/444] w-full">
                   <Image
                     className="shadow-solid-l dark:hidden"
-                    src="/images/hero/hero-light.svg"
+                    src="/images/hero/hero1.png"
                     alt="Hero"
                     fill
                   />
                   <Image
                     className="hidden shadow-solid-l dark:block"
-                    src="/images/hero/hero-dark.svg"
+                    src="/images/hero/hero1.png"
                     alt="Hero"
                     fill
                   />

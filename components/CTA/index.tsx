@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const CTA = () => {
   return (
@@ -28,11 +29,15 @@ const CTA = () => {
               viewport={{ once: true }}
               className="animate_left md:w-[70%] lg:w-1/2"
             >
-              <h2 className="mb-4 w-11/12 text-1x font-bold text-black dark:text-white xl:text-sectiontitle2">
-                Get Started Today 
-              </h2>
-              <p >
-                with CODICO GLOBAL ACADEMY and enhance your programming skills and Knowledge
+              <Link href="http://localhost:3000/auth/signup">
+                <h2 className="text-1x mb-4 w-11/12 font-bold text-black dark:text-white xl:text-sectiontitle2">
+                  Get Started Today
+                </h2>
+              </Link>
+
+              <p>
+                with CODICO GLOBAL ACADEMY and enhance your programming skills
+                and Knowledge
               </p>
             </motion.div>
             <motion.div
@@ -63,7 +68,7 @@ const CTA = () => {
                 />
                 <a
                   href="/auth/signup"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white hover:opacity-90 dark:bg-white dark:text-black"
+                  className="inline-flex items-center gap-2.5 rounded-full bg-red-500 px-6 py-3 font-medium text-white hover:opacity-90 dark:bg-white dark:text-black"
                 >
                   Sign up free
                   <Image

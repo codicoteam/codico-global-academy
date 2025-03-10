@@ -7,7 +7,7 @@ const featuresTabData: FeatureTab[] = [
     desc1: `Take control of your Learning Journey with our self-paced online courses. Learn at your 
     own speed, review material as needed and upgrade your skills with ease.`,
     desc2: ` Get started Today with CODICO GLOBAL ACADEMYS  `,
-    image: "/images/features/features-light-01.png",
+    image: "/images/features/feature1.png",
     imageDark: "/images/features/features-dark-01.svg",
   },
   {
@@ -15,7 +15,7 @@ const featuresTabData: FeatureTab[] = [
     title: "Real-World Projects",
     desc1: `Apply your theoretical Knowledge and concepts to real world projects and build a portfolio of your work.`,
     desc2: `    Get Started Today with CODICO GLOBAL ACADEMY.`,
-    image: "/images/features/features-light-01.png",
+    image: "/images/features/feature2.png",
     imageDark: "/images/features/features-dark-01.svg",
   },
   {
