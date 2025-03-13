@@ -1,10 +1,12 @@
 "use client";
-import { db, auth } from "@/app/config"; // Ensure auth is correctly imported
+import { db, auth } from "@/app/config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast"; // You'll need to install this package
 
 async function signUpUser(firstName, lastName, email, password) {
   try {
@@ -28,11 +30,13 @@ async function signUpUser(firstName, lastName, email, password) {
     return true;
   } catch (err) {
     console.error("Error signing up:", err.message);
-    return false;
+    throw err; // We'll handle the error in the component
   }
 }
 
 export default function SignupForm() {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -46,16 +50,42 @@ export default function SignupForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const added = await signUpUser(
-      formData.firstName,
-      formData.lastName,
-      formData.email,
-      formData.password,
-    );
+    
+    // Validate all fields are filled
+    const allFieldsFilled = Object.values(formData).every(field => field !== "");
+    if (!allFieldsFilled) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+    
+    // Set loading state to change button text
+    setIsLoading(true);
+    
+    try {
+      const user =   await signUpUser(
+        formData.firstName,
+        formData.lastName,
+        formData.email,
+        formData.password,
+      );
 
-    if (added) {
+      localStorage.setItem("signedUpUser", JSON.stringify(user));
+
+      // Reset form and show success toast
       setFormData({ firstName: "", lastName: "", email: "", password: "" });
-      alert("Data added to Firestore DB!");
+      toast.success("You have successfully registered!");
+
+      
+      // Redirect after a short delay to allow the toast to be seen
+      setTimeout(() => {
+        router.push("/");
+      }, 1500);
+      
+    } catch (error) {
+      // Show error message
+      toast.error(error.message || "Registration failed, please try again");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -82,6 +112,7 @@ export default function SignupForm() {
                 value={formData.firstName}
                 onChange={handleChange}
                 className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo dark:border-strokedark dark:focus:border-manatee"
+                required
               />
               <input
                 name="lastName"
@@ -90,6 +121,7 @@ export default function SignupForm() {
                 value={formData.lastName}
                 onChange={handleChange}
                 className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo dark:border-strokedark dark:focus:border-manatee"
+                required
               />
             </div>
 
@@ -101,6 +133,7 @@ export default function SignupForm() {
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo dark:border-strokedark dark:focus:border-manatee"
+                required
               />
               <input
                 name="password"
@@ -109,14 +142,26 @@ export default function SignupForm() {
                 value={formData.password}
                 onChange={handleChange}
                 className="w-full border-b border-stroke bg-transparent pb-3.5 focus:border-waterloo dark:border-strokedark dark:focus:border-manatee"
+                required
               />
             </div>
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 hover:bg-gray-800"
+              disabled={isLoading}
+              className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 hover:bg-gray-800 disabled:opacity-70"
             >
-              Sign Up
+              {isLoading ? (
+                <>
+                  <svg className="h-5 w-5 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                  </svg>
+                  Registering...
+                </>
+              ) : (
+                "Sign Up"
+              )}
             </button>
           </form>
         </motion.div>

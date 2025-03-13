@@ -160,10 +160,9 @@ const Header = () => {
             >
               GitHub Repo
             </Link> */}
-
             <Link
-              href="#"
-              className="flex items-center justify-center rounded-full bg-primary px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-primaryho"
+              href="http://localhost:3000/support"
+              className="flex items-center justify-center rounded-full bg-red-500 px-7.5 py-2.5 text-regular text-white duration-300 ease-in-out hover:bg-red-600"
             >
               Contact
             </Link>

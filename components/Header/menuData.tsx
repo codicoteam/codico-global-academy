@@ -13,52 +13,53 @@ const menuData: Menu[] = [
     newTab: false,
     path: "/#features",
   },
+  
   {
-    id: 2.1,
-    title: "Team",
-    newTab: false,
-    path: "/blog",
-  },
-  {
-    id: 2.1,
+    id: 3,
     title: "Courses",
     newTab: false,
     path: "/courses",
   },
 
   {
-    id: 2.1,
+    id: 4,
     title: "AddCourse",
     newTab: false,
     path: "/addCourses",
   },
+  {
+    id: 5,
+    title: "Learning Paths",
+    newTab: false,
+    path: "/learningPath",
+  },
 
   {
-    id: 3,
+    id: 6,
     title: "Pages",
     newTab: false,
     submenu: [
       {
-        id: 31,
+        id: 61,
         title: "Team",
         newTab: false,
         path: "/Team",
       },
       {
-        id: 34,
+        id: 62,
         title: "Sign In",
         newTab: false,
         path: "/auth/signin",
       },
       {
-        id: 35,
+        id: 63,
         title: "Sign Up",
         newTab: false,
         path: "/auth/signup",
       },
 
       {
-        id: 35.1,
+        id: 64,
         title: "Support",
         newTab: false,
         path: "/support",
