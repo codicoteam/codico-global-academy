@@ -27,10 +27,8 @@ interface LearningPath {
   currency: string;
   learningPathImage: string;
 }
-
 const LearningPathItem = () => {
   const [selectedPath, setSelectedPath] = useState<LearningPath | null>(null);
-
   const learningPaths: LearningPath[] = [
     {
       id: 1,
