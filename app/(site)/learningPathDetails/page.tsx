@@ -110,7 +110,6 @@ const LearningPathDetails: React.FC<LearningPathDetailsProps> = ({
           >
             <h3 className="text-xl font-medium mb-3">{component.comptitle}</h3>
             <p className="text-gray-600 mb-4">{component.compdescription}</p>
-
             <div className="space-y-2">
               {component.combsub.map((subtitle, subtitleIndex) => (
                 <div 
@@ -137,3 +136,7 @@ const LearningPathDetails: React.FC<LearningPathDetailsProps> = ({
 };
 
 export default LearningPathDetails;
+
+
+
+
